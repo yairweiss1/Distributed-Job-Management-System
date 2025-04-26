@@ -1,0 +1,29 @@
+@host = http://localhost:5034
+
+GET {{host}}/api/jobs
+Accept: application/json
+
+###
+
+POST {{host}}/api/jobs
+Content-Type: application/json
+
+{
+    "name": "Test Job",
+    "priority": 0
+}
+
+###
+
+POST {{host}}/api/jobs/1/stop
+Accept: application/json
+
+###
+
+POST {{host}}/api/jobs/1/restart
+Accept: application/json
+
+###
+
+DELETE {{host}}/api/jobs/1
+Accept: application/json
